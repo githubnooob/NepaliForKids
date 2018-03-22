@@ -16,6 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".A_Activity" />
+        <activity android:name=".Aa_Activity" />
+        <activity android:name=".Ka_Activity" />
+        <activity android:name=".One_Activity" />
+        <activity android:name=".DrawingActivity"></activity>
     </application>
 
 </manifest>
