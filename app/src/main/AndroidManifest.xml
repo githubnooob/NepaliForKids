@@ -20,7 +20,8 @@
         <activity android:name=".Aa_Activity" />
         <activity android:name=".Ka_Activity" />
         <activity android:name=".One_Activity" />
-        <activity android:name=".DrawingActivity"></activity>
+        <activity android:name=".DrawingActivity" />
+        <activity android:name=".Aek_Activity"></activity>
     </application>
 
 </manifest>

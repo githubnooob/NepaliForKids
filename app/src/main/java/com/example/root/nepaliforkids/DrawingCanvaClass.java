@@ -10,9 +10,6 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-/**
- * Created by root on 3/21/18.
- */
 
 public class DrawingCanvaClass extends View {
 

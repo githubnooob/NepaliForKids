@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     private CardView cardViewForKa;
     private CardView cardViewForAa;
     private CardView cardViewForOne;
-
+    private CardView cardViewForAek;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +23,20 @@ public class MainActivity extends AppCompatActivity {
         cardViewForKa = (CardView) findViewById(R.id.cardViewForKa);
         cardViewForOne = (CardView) findViewById(R.id.cardViewForOne);
         cardViewForAa = (CardView) findViewById(R.id.cardViewForAa);
+        cardViewForAek = (CardView) findViewById(R.id.cardViewForaek);
 
         cardViewForA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,A_Activity.class);
+                startActivity(intent);
+            }
+        });
+
+        cardViewForAek.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,Aek_Activity.class);
                 startActivity(intent);
             }
         });
@@ -51,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         cardViewForKa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,DrawingActivity.class);
+                Intent intent = new Intent(MainActivity.this,Ka_Activity.class);
                 startActivity(intent);
             }
         });
