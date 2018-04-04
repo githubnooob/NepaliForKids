@@ -21,7 +21,8 @@
         <activity android:name=".Ka_Activity" />
         <activity android:name=".One_Activity" />
         <activity android:name=".DrawingActivity" />
-        <activity android:name=".Aek_Activity"></activity>
+        <activity android:name=".Aek_Activity" />
+        <activity android:name=".EveryLetterActivity"></activity>
     </application>
 
 </manifest>
