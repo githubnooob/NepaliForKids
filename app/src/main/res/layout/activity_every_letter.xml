@@ -7,14 +7,29 @@
     tools:context="com.example.root.nepaliforkids.EveryLetterActivity">
 
     <ImageView
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        tools:src="@drawable/one"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="20dp"
+        android:id="@+id/eachLetterImageView"
+        android:layout_marginRight="20dp" />
+
+
+    <com.example.root.nepaliforkids.DrawingCanvaClass
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentRight="true"
+        android:layout_below="@id/eachLetterImageView"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        tools:src="@drawable/ic_launcher_background"
-        android:id="@+id/letterPic"
-        android:layout_marginRight="10dp" />
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginEnd="5dp"
+        />
+
+
+
 
 
 </RelativeLayout>
