@@ -1,18 +1,31 @@
 package com.example.root.nepaliforkids;
 
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class EveryLetterActivity extends AppCompatActivity {
-    private ImageView imageView;
+    private TextView letterView;
+    private Button clearButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_every_letter);
-        imageView = findViewById(R.id.eachLetterImageView);
+        letterView = findViewById(R.id.letterText);
+        clearButton = findViewById(R.id.clearButton);
+
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DrawingCanvaClass.path.reset();
+            }
+        });
 
         Intent intent = getIntent();
         String letters = intent.getStringExtra("letterValue");
@@ -22,116 +35,350 @@ public class EveryLetterActivity extends AppCompatActivity {
             case "0":
                 break;
             case "1":
-                imageView.setImageResource(R.drawable.one);
+                 letterView.setText(letters);
                 break;
             case "2":
-                imageView.setImageResource(R.drawable.two);
+                 letterView.setText(letters);
                 break;
             case "3":
-                imageView.setImageResource(R.drawable.three);
+                 letterView.setText(letters);
                 break;
             case "4":
-                imageView.setImageResource(R.drawable.four);
+                 letterView.setText(letters);
                 break;
             case "5":
-                imageView.setImageResource(R.drawable.five);
+                 letterView.setText(letters);
                 break;
             case "6":
-                imageView.setImageResource(R.drawable.six);
+                 letterView.setText(letters);
                 break;
             case "7":
-                imageView.setImageResource(R.drawable.seven);
+                 letterView.setText(letters);
                 break;
             case "8":
-                imageView.setImageResource(R.drawable.eight);
+                 letterView.setText(letters);
                 break;
             case "9":
-                imageView.setImageResource(R.drawable.nine);
-                break;
-            case "10":
-                imageView.setImageResource(R.drawable.ten);
+                 letterView.setText(letters);
                 break;
 
             case "A":
-                imageView.setImageResource(R.drawable.a);
+                 letterView.setText(letters);
                 break;
             case "B":
-                imageView.setImageResource(R.drawable.b);
+                 letterView.setText(letters);
                 break;
             case "C":
-                imageView.setImageResource(R.drawable.c);
+                 letterView.setText(letters);
                 break;
             case "D":
-                imageView.setImageResource(R.drawable.d);
+                 letterView.setText(letters);
                 break;
             case "E":
-                imageView.setImageResource(R.drawable.e);
+                 letterView.setText(letters);
                 break;
             case "F":
-                imageView.setImageResource(R.drawable.f);
+                 letterView.setText(letters);
                 break;
             case "G":
-                imageView.setImageResource(R.drawable.g);
+                 letterView.setText(letters);
                 break;
             case "H":
-                imageView.setImageResource(R.drawable.h);
+                 letterView.setText(letters);
                 break;
             case "I":
-                imageView.setImageResource(R.drawable.i);
+                 letterView.setText(letters);
                 break;
             case "J":
-                imageView.setImageResource(R.drawable.j);
+                 letterView.setText(letters);
                 break;
             case "K":
-                imageView.setImageResource(R.drawable.k);
+                 letterView.setText(letters);
                 break;
             case "L":
-                imageView.setImageResource(R.drawable.l);
+                 letterView.setText(letters);
                 break;
             case "M":
-                imageView.setImageResource(R.drawable.m);
+                 letterView.setText(letters);
                 break;
             case "N":
-                imageView.setImageResource(R.drawable.n);
+                 letterView.setText(letters);
                 break;
             case "O":
-                imageView.setImageResource(R.drawable.o);
+                 letterView.setText(letters);
                 break;
             case "P":
-                imageView.setImageResource(R.drawable.p);
+                 letterView.setText(letters);
                 break;
             case "Q":
-                imageView.setImageResource(R.drawable.q);
+                 letterView.setText(letters);
                 break;
             case "R":
-                imageView.setImageResource(R.drawable.r);
+                 letterView.setText(letters);
                 break;
             case "S":
-                imageView.setImageResource(R.drawable.s);
+                 letterView.setText(letters);
                 break;
             case "T":
-                imageView.setImageResource(R.drawable.t);
+                 letterView.setText(letters);
                 break;
             case "U":
-                imageView.setImageResource(R.drawable.u);
+                 letterView.setText(letters);
                 break;
             case "V":
-                imageView.setImageResource(R.drawable.v);
+                 letterView.setText(letters);
                 break;
             case "W":
-                imageView.setImageResource(R.drawable.w);
+                 letterView.setText(letters);
                 break;
             case "X":
-                imageView.setImageResource(R.drawable.x);
+                 letterView.setText(letters);
                 break;
             case "Y":
-                imageView.setImageResource(R.drawable.y);
+                 letterView.setText(letters);
                 break;
             case "Z":
-                imageView.setImageResource(R.drawable.z);
+                 letterView.setText(letters);
                 break;
+            case "क":
+                letterView.setText(letters);
+                break;
+            case "ख":
+
+                letterView.setText(letters);
+                break;
+            case "ग":
+
+                letterView.setText(letters);
+                break;
+            case "घ":
+
+                letterView.setText(letters);
+                break;
+            case "ङ":
+
+                letterView.setText(letters);
+                break;
+            case "च":
+
+                letterView.setText(letters);
+                break;
+            case "छ":
+
+                letterView.setText(letters);
+                break;
+            case "ज":
+
+                letterView.setText(letters);
+                break;
+            case "झ":
+
+                letterView.setText(letters);
+                break;
+            case "ञ":
+
+                letterView.setText(letters);
+                break;
+            case "ट":
+
+                letterView.setText(letters);
+                break;
+
+            case "ठ":
+
+                letterView.setText(letters);
+                break;
+            case "ड":
+
+                letterView.setText(letters);
+                break;
+            case "ढ":
+
+                letterView.setText(letters);
+                break;
+            case "ण":
+
+                letterView.setText(letters);
+                break;
+            case "त":
+
+                letterView.setText(letters);
+                break;
+            case "थ":
+
+                letterView.setText(letters);
+                break;
+            case "द":
+
+                letterView.setText(letters);
+                break;
+            case "ध":
+
+                letterView.setText(letters);
+                break;
+            case "न":
+
+                letterView.setText(letters);
+                break;
+            case "प":
+
+                letterView.setText(letters);
+                break;
+            case "फ":
+
+                letterView.setText(letters);
+                break;
+            case "ब":
+
+                letterView.setText(letters);
+                break;
+            case "भ":
+
+                letterView.setText(letters);
+                break;
+            case "म":
+
+                letterView.setText(letters);
+                break;
+            case "य":
+
+                letterView.setText(letters);
+                break;
+            case "र":
+
+                letterView.setText(letters);
+                break;
+            case "ल":
+
+                letterView.setText(letters);
+                break;
+            case "व":
+
+                letterView.setText(letters);
+                break;
+            case "श":
+
+                letterView.setText(letters);
+                break;
+            case "ष":
+
+                letterView.setText(letters);
+                break;
+            case "स":
+
+                letterView.setText(letters);
+                break;
+            case "ह":
+
+                letterView.setText(letters);
+                break;
+            case "क्ष":
+
+                letterView.setText(letters);
+                break;
+            case "त्र":
+
+                letterView.setText(letters);
+                break;
+            case "ज्ञ":
+
+                letterView.setText(letters);
+                break;
+
+            case "अ":
+
+                letterView.setText(letters);
+                break;
+            case "आ":
+
+                letterView.setText(letters);
+                break;
+            case "इ":
+
+                letterView.setText(letters);
+                break;
+            case "ई":
+
+                letterView.setText(letters);
+                break;
+            case "उ":
+
+                letterView.setText(letters);
+                break;
+            case "ऊ":
+
+                letterView.setText(letters);
+                break;
+            case "ए":
+
+                letterView.setText(letters);
+                break;
+            case "ऐ":
+
+                letterView.setText(letters);
+                break;
+            case "ओ":
+
+                letterView.setText(letters);
+                break;
+            case "औ":
+
+                letterView.setText(letters);
+                break;
+            case "अं":
+
+                letterView.setText(letters);
+                break;
+
+            case "अ:":
+                letterView.setText(letters);
+                break;
+
+            case "०":
+
+                letterView.setText(letters);
+                break;
+            case "१":
+
+                letterView.setText(letters);
+                break;
+            case "२":
+
+                letterView.setText(letters);
+                break;
+            case "३":
+
+                letterView.setText(letters);
+                break;
+            case "४":
+
+                letterView.setText(letters);
+                break;
+            case "५":
+
+                letterView.setText(letters);
+                break;
+            case "६":
+
+                letterView.setText(letters);
+                break;
+            case "७":
+
+                letterView.setText(letters);
+                break;
+            case "८":
+
+                letterView.setText(letters);
+                break;
+            case "९":
+
+                letterView.setText(letters);
+                break;
+
+
+
             default:
-                imageView.setImageResource(R.drawable.a);
+
                 break;
         }
 

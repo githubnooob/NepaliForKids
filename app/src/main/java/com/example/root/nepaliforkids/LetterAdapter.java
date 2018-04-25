@@ -88,6 +88,16 @@ public class LetterAdapter extends RecyclerView.Adapter<LetterAdapter.MyViewHold
             holder.middleText.setText(listItem.getMiddleItem());
             holder.endingText.setText(listItem.getEndItem());
 
+            if(listItem.getMiddleItem()=="")
+            {
+                holder.middleElement.setVisibility(View.INVISIBLE);
+            }
+
+            if(listItem.getEndItem()=="")
+            {
+                holder.endElement.setVisibility(View.INVISIBLE);
+            }
+
             holder.startingElement.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

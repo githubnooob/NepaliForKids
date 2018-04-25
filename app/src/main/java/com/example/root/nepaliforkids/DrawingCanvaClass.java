@@ -14,7 +14,7 @@ import android.view.View;
 public class DrawingCanvaClass extends View {
 
     private Paint paint;
-    private Path path;
+    public static Path path;
 
     public DrawingCanvaClass(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
