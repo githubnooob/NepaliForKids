@@ -39,7 +39,8 @@ public class A_Activity extends AppCompatActivity {
         itemModels.add(new ItemModel("V","W","X"));
         itemModels.add(new ItemModel("Y","Z",""));
 
-        adapter = new LetterAdapter(itemModels,getApplicationContext());
+        adapter = new LetterAdapter(itemModels,this);
+
         mRecyclerView.setAdapter(adapter);
 
 

@@ -32,7 +32,7 @@ public class One_Activity extends AppCompatActivity {
         itemModels.add(new ItemModel("6","7","8"));
         itemModels.add(new ItemModel("9","",""));
 
-        adapter = new LetterAdapter(itemModels,getApplicationContext());
+        adapter = new LetterAdapter(itemModels,this);
         mRecyclerView.setAdapter(adapter);
 
 

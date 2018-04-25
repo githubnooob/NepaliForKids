@@ -2,19 +2,19 @@ package com.example.root.nepaliforkids;
 
 import android.app.LauncherActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.sip.SipSession;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
-/**
- * Created by root on 4/9/18.
- */
 
 public class LetterAdapter extends RecyclerView.Adapter<LetterAdapter.MyViewHolder> {
 
@@ -36,8 +36,7 @@ public class LetterAdapter extends RecyclerView.Adapter<LetterAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        ItemModel listItem = (ItemModel) itemsList.get(position);
-
+        final ItemModel listItem = (ItemModel) itemsList.get(position);
             switch (position)
             {
                 case 1:
@@ -89,6 +88,32 @@ public class LetterAdapter extends RecyclerView.Adapter<LetterAdapter.MyViewHold
             holder.middleText.setText(listItem.getMiddleItem());
             holder.endingText.setText(listItem.getEndItem());
 
+            holder.startingElement.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(c,EveryLetterActivity.class);
+                    intent.putExtra("letterValue",listItem.getStartingItem());
+                    c.startActivity(intent);
+                }
+            });
+
+            holder.middleElement.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(c,EveryLetterActivity.class);
+                    intent.putExtra("letterValue",listItem.getMiddleItem());
+                    c.startActivity(intent);
+                }
+            });
+
+            holder.endElement.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(c,EveryLetterActivity.class);
+                    intent.putExtra("letterValue",listItem.getEndItem());
+                    c.startActivity(intent);
+                }
+            });
     }
 
     @Override
@@ -106,7 +131,7 @@ public class LetterAdapter extends RecyclerView.Adapter<LetterAdapter.MyViewHold
         private CardView middleElement;
         private CardView endElement;
 
-        public MyViewHolder(View itemView) {
+        public MyViewHolder(final View itemView) {
             super(itemView);
             startingText = itemView.findViewById(R.id.StartingElementText);
             middleText = itemView.findViewById(R.id.MiddleElementText);
@@ -115,7 +140,10 @@ public class LetterAdapter extends RecyclerView.Adapter<LetterAdapter.MyViewHold
             startingElement= itemView.findViewById(R.id.StartingElement);
             middleElement = itemView.findViewById(R.id.MiddleElement);
             endElement = itemView.findViewById(R.id.EndElement);
+
         }
+
+
     }
 
 

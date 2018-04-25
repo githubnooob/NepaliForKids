@@ -40,7 +40,8 @@ public class Ka_Activity extends AppCompatActivity {
         itemModels.add(new ItemModel("क्ष","त्र","ज्ञ"));
 
 
-        adapter = new LetterAdapter(itemModels,getApplicationContext());
+        adapter = new LetterAdapter(itemModels,this);
+
         mRecyclerView.setAdapter(adapter);
 
 

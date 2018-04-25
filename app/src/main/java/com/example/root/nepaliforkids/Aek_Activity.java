@@ -34,7 +34,7 @@ public class Aek_Activity extends AppCompatActivity {
         itemModels.add(new ItemModel("६","७","८"));
         itemModels.add(new ItemModel("९","",""));
 
-        adapter = new LetterAdapter(itemModels,getApplicationContext());
+        adapter = new LetterAdapter(itemModels,this);
         mRecyclerView.setAdapter(adapter);
 
 

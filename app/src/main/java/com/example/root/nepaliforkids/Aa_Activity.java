@@ -28,7 +28,9 @@ public class Aa_Activity extends AppCompatActivity {
         itemModels.add(new ItemModel("ई","उ","ऊ"));
         itemModels.add(new ItemModel("ए","ऐ","ओ"));
         itemModels.add(new ItemModel("औ","अं","अ:"));
-        adapter = new LetterAdapter(itemModels,getApplicationContext());
+        adapter = new LetterAdapter(itemModels,this);
         mRecyclerView.setAdapter(adapter);
+
+
     }
 }

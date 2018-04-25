@@ -15,52 +15,43 @@ public class EveryLetterActivity extends AppCompatActivity {
         imageView = findViewById(R.id.eachLetterImageView);
 
         Intent intent = getIntent();
-        intent.getStringExtra("letterValue");
-        int value = intent.getIntExtra("letterValue",20);
-        String alpahbets = intent.getStringExtra("letterValue");
+        String letters = intent.getStringExtra("letterValue");
 
-        switch (value)
+        switch (letters)
         {
-            case 0:
+            case "0":
                 break;
-            case 1:
+            case "1":
                 imageView.setImageResource(R.drawable.one);
                 break;
-            case 2:
+            case "2":
                 imageView.setImageResource(R.drawable.two);
                 break;
-            case 3:
+            case "3":
                 imageView.setImageResource(R.drawable.three);
                 break;
-            case 4:
+            case "4":
                 imageView.setImageResource(R.drawable.four);
                 break;
-            case 5:
+            case "5":
                 imageView.setImageResource(R.drawable.five);
                 break;
-            case 6:
+            case "6":
                 imageView.setImageResource(R.drawable.six);
                 break;
-            case 7:
+            case "7":
                 imageView.setImageResource(R.drawable.seven);
                 break;
-            case 8:
+            case "8":
                 imageView.setImageResource(R.drawable.eight);
                 break;
-            case 9:
+            case "9":
                 imageView.setImageResource(R.drawable.nine);
                 break;
-            case 10:
+            case "10":
                 imageView.setImageResource(R.drawable.ten);
                 break;
-            case 11:
-            default:
-                break;
-        }
 
-
-        switch (alpahbets)
-        {
             case "A":
                 imageView.setImageResource(R.drawable.a);
                 break;
@@ -140,6 +131,7 @@ public class EveryLetterActivity extends AppCompatActivity {
                 imageView.setImageResource(R.drawable.z);
                 break;
             default:
+                imageView.setImageResource(R.drawable.a);
                 break;
         }
 

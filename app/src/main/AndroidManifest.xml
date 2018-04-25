@@ -9,20 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:launchMode="singleTop" android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".A_Activity" />
-        <activity android:name=".Aa_Activity" />
-        <activity android:name=".Ka_Activity" />
-        <activity android:name=".One_Activity" />
-        <activity android:name=".DrawingActivity" />
-        <activity android:name=".Aek_Activity" />
-        <activity android:name=".EveryLetterActivity"></activity>
+        <activity android:launchMode="singleTop" android:name=".A_Activity" />
+        <activity android:launchMode="singleTop" android:name=".Aa_Activity" />
+        <activity android:launchMode="singleTop" android:name=".Ka_Activity" />
+        <activity android:launchMode="singleTop" android:name=".One_Activity" />
+        <activity android:launchMode="singleTop" android:name=".DrawingActivity" />
+        <activity android:launchMode="singleTop" android:name=".Aek_Activity" />
+        <activity android:launchMode="singleTop" android:name=".EveryLetterActivity"></activity>
     </application>
 
 </manifest>
