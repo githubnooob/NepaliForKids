@@ -27,10 +27,12 @@ public class One_Activity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         itemModels = new ArrayList<>();
 
-        itemModels.add(new ItemModel("0","1","2"));
-        itemModels.add(new ItemModel("3","4","5"));
-        itemModels.add(new ItemModel("6","7","8"));
-        itemModels.add(new ItemModel("9","",""));
+        for (int i = 0; i<=11;i=i+3)
+        {
+            itemModels.add(new ItemModel(String.valueOf(i),String.valueOf(i+1),String.valueOf(i+2)));
+        }
+
+
 
         adapter = new LetterAdapter(itemModels,this);
         mRecyclerView.setAdapter(adapter);

@@ -1,18 +1,30 @@
 package com.example.root.nepaliforkids;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
+import android.graphics.Path;
 import android.graphics.PorterDuff;
+import android.os.Build;
+import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 public class EveryLetterActivity extends AppCompatActivity {
     private TextView letterView;
     private Button clearButton;
+    private TextToSpeech speakLetters;
+    private String get_sound;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,20 +32,24 @@ public class EveryLetterActivity extends AppCompatActivity {
         letterView = findViewById(R.id.letterText);
         clearButton = findViewById(R.id.clearButton);
 
+
+
         clearButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 DrawingCanvaClass.path.reset();
             }
         });
 
+
         Intent intent = getIntent();
         String letters = intent.getStringExtra("letterValue");
-
+        get_sound = letters;
         switch (letters)
         {
             case "0":
-                break;
+                letterView.setText(letters);
             case "1":
                  letterView.setText(letters);
                 break;
@@ -335,7 +351,6 @@ public class EveryLetterActivity extends AppCompatActivity {
                 break;
 
             case "०":
-
                 letterView.setText(letters);
                 break;
             case "१":
@@ -384,5 +399,57 @@ public class EveryLetterActivity extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    protected void onPause() {
+        if(speakLetters !=null){
+            speakLetters.stop();
+            speakLetters.shutdown();
+            speakLetters = null;
+        }
+        super.onPause();
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.every_letter_menu_items,menu);
+        return true;
+    }
+
+    @Override
+    protected void onResume() {
+
+        speakLetters =new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status != TextToSpeech.ERROR) {
+                    speakLetters.setLanguage(Locale.UK);
+                }
+            }
+        });
+
+        super.onResume();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId())
+        {
+            case R.id.make_sound:
+                makeSound();
+        }
+
+        return true;
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    private void makeSound() {
+        if (get_sound.matches("[A-Za-z0-9]+")) {
+            Log.e("Checking Sound", get_sound);
+            speakLetters.speak(get_sound, TextToSpeech.QUEUE_FLUSH, null);
+        }
     }
 }
